@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xem Tài Liệu TMDT</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #111827, #1f2937, #374151);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .page {
+            width: 100%;
+            min-height: 100vh;
+            padding: 30px 20px;
+        }
+
+        .header {
+            max-width: 1100px;
+            margin: 0 auto 24px auto;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .header p {
+            margin: 12px auto 0 auto;
+            max-width: 760px;
+            color: #d1d5db;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .card {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(8px);
+        }
+
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .document-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #f9fafb;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            color: white;
+            background: #2563eb;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .buttons a:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        .buttons a.secondary {
+            background: #4b5563;
+        }
+
+        .buttons a.secondary:hover {
+            background: #374151;
+        }
+
+        .viewer {
+            width: 100%;
+            height: 78vh;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #111827;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        embed {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .note {
+            margin-top: 14px;
+            text-align: center;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .page {
+                padding: 20px 12px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .toolbar {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .viewer {
+                height: 72vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <h1>Tài liệu: Phân tích mô hình TMDT</h1>
+            <p>Trang này dùng để xem trực tiếp nội dung bài thuyết trình dưới dạng PDF. Người xem có thể mở tài liệu ở tab mới hoặc tải file PowerPoint về máy.</p>
+        </div>
+
+        <div class="card">
+            <div class="toolbar">
+                <div class="document-title">Bản xem tài liệu</div>
+
+                <div class="buttons">
+                    <a href="slide.pdf" target="_blank">Mở PDF</a>
+                    <a href="slide.pptx" download class="secondary">Tải PowerPoint</a>
+                </div>
+            </div>
+
+            <div class="viewer">
+                <embed src="slide.pdf" type="application/pdf">
+            </div>
+
+            <div class="note">
+                Nếu PDF không hiển thị, hãy bấm nút “Mở PDF” để xem trực tiếp trên trình duyệt.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
